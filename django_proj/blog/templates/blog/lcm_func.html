@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body>
+	{% autoescape off %}
+<h2>Output:</h2>
+<h3>First Number: Prime factors of {{num1}} are {{pf1}}. Prime factorization of {{s1}} in exponent form is: LCM({{pf1}}) = {{s1}} </h3><br>
+<h3>Second Number: Prime factors of {{num2}} are {{pf2}}. Prime factorization of {{s2}} in exponent form is: LCM({{pf2}}) = {{s2}} </h3><br>
+<h3>Step 2:
+Therefore, LCM of two numbers {{num1}} and {{num2}} is {{lcm1}}<br>
+<br>
+LCM({{num1}},{{num2}}) = {{lcm1}}</h3>
+{% endautoescape %}
+</body>
+</html>
