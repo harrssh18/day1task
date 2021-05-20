@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Calculator</title>
-</head>
-<body>
-<h1>Result:</h1>
-<h3>Step 1: Firstly, find the Prime Factorization of given numbers {{num1}}, {{num2}}<br>
+{% extends 'lcm/lcm.html' %}
+{% block cal %}
+{{ block.super }}
+{% endblock cal %}
+{% block output %}
+<br>
+<h1 class="btn btn-danger">Result:</h1>
+<h4><h3 class="btn btn-outline-primary">Step 1:</h3> Firstly, find the Prime Factorization of given numbers {{num1}}, {{num2}}<br>
 Prime factors of {{num1}} are {{prime_fact1}}. <br>
-Prime factorization of {{num1}} in exponent form is: {{num1}} = {{prime_fact1}}<br>
+Prime factorization of {{num1}} in exponent form is: {{num1}} = {{prime_fact1}}<br><br>
+
 Prime factors of {{num2}} are {{prime_fact2}}. <br>
 Prime factorization of {{num2}} in exponent form is: {{num2}} = {{prime_fact2}}
 <br><br>
-Step 2: Multiply together each of the Prime Numbers with the highest power to obtain the Least Common Multiple<br>
+<h3 class="btn btn-outline-primary">Step 2:</h3> Multiply together each of the Prime Numbers with the highest power to obtain the Least Common Multiple<br>
 On doing so, you will get the resultant equation as {{l}}= {{lcm}}<br>
 Therefore, LCM of two numbers {{num1}} and {{num2}} is {{lcm}}<br>
 LCM({{num1}},{{num2}}) = {{lcm}}
-</h3>
-</body>
-</html>
+
+</h4>
+{% endblock output %}

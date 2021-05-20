@@ -1,16 +1,46 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'lcm/css/style.css' %}">
 	<title>Calculator</title>
 </head>
 <body>
-<h1>LCM Calculator</h1>
+	<div class="container">
+		<div class="row">
+	<div class="col-sm-6 my-3">
+	
+	
+<h1 class="btn btn-success my-2" style="width: 300px; height: 50px;">LCM Calculator</h1>
 <form action="{% url 'lcm1' %}" method="POST" novalidate>
 	{% csrf_token %}
 	{% for form in forms %}
 		{{form.label}} {{form}} <br><br>
-	{% endfor %}
-	<input type="submit" name="Calculate">
+	{% endfor %} 
+	<input type="submit" name="Calculate" class="btn btn-info" >
+	<a href="{% url 'lcm1' %}" class="btn btn-outline-warning">Reset</a>
 </form>
+{% if re %}
+<br>
+<h1 class="btn btn-danger">Result:</h1>
+<h4><h3 class="btn btn-outline-primary">Step 1:</h3> Firstly, find the Prime Factorization of given numbers {{num1}}, {{num2}}<br>
+Prime factors of {{num1}} are {{prime_fact1}}. <br>
+Prime factorization of {{num1}} in exponent form is: {{num1}} = {{prime_fact1}}<br><br>
+
+Prime factors of {{num2}} are {{prime_fact2}}. <br>
+Prime factorization of {{num2}} in exponent form is: {{num2}} = {{prime_fact2}}
+<br><br>
+<h3 class="btn btn-outline-primary">Step 2:</h3> Multiply together each of the Prime Numbers with the highest power to obtain the Least Common Multiple<br>
+On doing so, you will get the resultant equation as {{l}}= {{lcm}}<br>
+Therefore, LCM of two numbers {{num1}} and {{num2}} is {{lcm}}<br>
+LCM({{num1}},{{num2}}) = {{lcm}}
+
+</h4>
+{% endif %}
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
