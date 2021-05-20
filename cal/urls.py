@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
     path('lcm-calculator/',views.lcm1,name="lcm1"),
-	path('lcm-of-<int:num1>-and-<int:num2>/',views.result,name="result"),
 ]
